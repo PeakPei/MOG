@@ -8,6 +8,8 @@
 
 #import <SpriteKit/SpriteKit.h>
 
-@interface MOG_MyScene : SKScene
+@interface MOG_MyScene : SKScene <SKPhysicsContactDelegate>
+
+@property (nonatomic) int count;
 
 @end

@@ -9,23 +9,41 @@
 #import "MOG_ViewController.h"
 #import "MOG_MyScene.h"
 
+@interface MOG_ViewController()
+@end
+
 @implementation MOG_ViewController
 
-- (void)viewDidLoad
-{
+- (void)viewDidLoad{
     [super viewDidLoad];
+    
+    
+    // Create and initialize a tap gesture
+    //UISwipeGestureRecognizer *swipeRecognizer = [[UISwipeGestureRecognizer alloc] initWithTarget:self action:@selector(respondToSwipeGesture:)];
+    //swipeRecognizer.numberOfTouchesRequired = 1;
+    //swipeRecognizer.direction = (UISwipeGestureRecognizerDirectionRight | UISwipeGestureRecognizerDirectionDown | UISwipeGestureRecognizerDirectionLeft | UISwipeGestureRecognizerDirectionUp);
+    //[self.view addGestureRecognizer:swipeRecognizer];
+}
 
+- (void)viewWillLayoutSubviews
+{
+    [super viewWillLayoutSubviews];
+    
     // Configure the view.
     SKView * skView = (SKView *)self.view;
-    skView.showsFPS = YES;
-    skView.showsNodeCount = YES;
-    
-    // Create and configure the scene.
-    SKScene * scene = [MOG_MyScene sceneWithSize:skView.bounds.size];
-    scene.scaleMode = SKSceneScaleModeAspectFill;
-    
-    // Present the scene.
-    [skView presentScene:scene];
+    if (!skView.scene) {
+        skView.showsFPS = YES;
+        skView.showsNodeCount = YES;
+        skView.showsDrawCount = YES;
+        
+        // Create and configure the scene.
+        SKScene *scene = [MOG_MyScene sceneWithSize:skView.bounds.size];
+        scene.scaleMode = SKSceneScaleModeAspectFill;
+        
+        NSLog(@"%@", NSStringFromCGRect(scene.frame));
+        // Present the scene.
+        [skView presentScene:scene];
+    }
 }
 
 - (BOOL)shouldAutorotate
@@ -47,5 +65,7 @@
     [super didReceiveMemoryWarning];
     // Release any cached data, images, etc that aren't in use.
 }
+
+// Respond to a swipe gesture
 
 @end
