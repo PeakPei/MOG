@@ -1,0 +1,13 @@
+wall_tile 105
+pause_tile[0] 108
+pause_tile[1] 111
+tomb_tile 114
+wkeydoor_tile 115
+ladder_tile 183
+stone_tile 184
+wdoor_tile 188
+door_tile 189
+keydoor_tile 190
+lever_tile 191
+character_tile[0] 
+

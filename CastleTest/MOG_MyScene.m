@@ -40,7 +40,7 @@
         [self getTileKeys];
 
         self.currentRoomX = 0;
-        self.currentRoomY = 15;
+        self.currentRoomY = 4;
         /* Setup your scene here */
         [self buildWorld];
         
@@ -179,7 +179,40 @@
         [theScanner scanInt:&numberOfObjects];
         NSMutableArray *roomObjects = [NSMutableArray arrayWithCapacity:numberOfObjects];
         for (int i = 0; i < numberOfObjects; i++) {
+            NSString *objectInfo;
+            [theScanner scanUpToCharactersFromSet:[NSCharacterSet newlineCharacterSet] intoString:&objectInfo];
+            NSLog(@"%@", objectInfo);
+            NSArray *components = [objectInfo componentsSeparatedByString:@" "];
+            int objectX;
+            int objectY;
+            if ([[components objectAtIndex:0] isEqualToString:@"ENEMY"]) {
+                NSString *enemyType = [components objectAtIndex:1];
+                objectX = [[components objectAtIndex:2] integerValue];
+                objectY = [[components objectAtIndex:3] integerValue];
+            } else {
+                objectX = [[components objectAtIndex:1] integerValue];
+                objectY = [[components objectAtIndex:2] integerValue];
+            }
             
+//            [theScanner scanCharactersFromSet:[NSCharacterSet letterCharacterSet] intoString:&objectName];
+//            if ([objectName co:@"ENEMY"]) {
+//                NSString *enemyType;
+//                [theScanner scanString:someString intoString:&enemyType];
+//            }
+//            int objectX;
+//            int objectY;
+//            int objectSize;
+//            int objectState;
+//            [theScanner scanInt:&objectX];
+//            [theScanner scanInt:&objectY];
+//            if ([objectName isEqualToString:@"LADDER"]) {
+//                [theScanner scanInt:&objectSize];
+//                [theScanner scanInt:&objectState];
+//            }
+//            if ([objectName isEqualToString:@"STONE"]) {
+//                [theScanner scanInt:&objectState];
+//            }
+//            NSLog(@"%@", objectName);
         }
         
         int tileSizeX = 16;

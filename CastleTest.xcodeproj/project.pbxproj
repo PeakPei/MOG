@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		866F09FB1810E5E300839002 /* tilenamekey.txt in Resources */ = {isa = PBXBuildFile; fileRef = 866F09FA1810E5E300839002 /* tilenamekey.txt */; };
 		86910315180B3B3E00EE6F40 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 86910314180B3B3E00EE6F40 /* Foundation.framework */; };
 		86910317180B3B3E00EE6F40 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 86910316180B3B3E00EE6F40 /* CoreGraphics.framework */; };
 		86910319180B3B3E00EE6F40 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 86910318180B3B3E00EE6F40 /* UIKit.framework */; };
@@ -357,6 +358,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		866F09FA1810E5E300839002 /* tilenamekey.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = tilenamekey.txt; path = Assets/rooms/tilenamekey.txt; sourceTree = "<group>"; };
 		86910311180B3B3E00EE6F40 /* CastleTest.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CastleTest.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		86910314180B3B3E00EE6F40 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		86910316180B3B3E00EE6F40 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -815,6 +817,7 @@
 			isa = PBXGroup;
 			children = (
 				86910369180C2D7100EE6F40 /* tilekey.txt */,
+				866F09FA1810E5E300839002 /* tilenamekey.txt */,
 				869105DB180C8C3400EE6F40 /* Rooms */,
 				8691035E180B92CC00EE6F40 /* Images */,
 			);
@@ -1232,6 +1235,7 @@
 				86910581180C8C2500EE6F40 /* w050704.txt in Resources */,
 				869104C1180C8C2400EE6F40 /* map0305.txt in Resources */,
 				869104EE180C8C2400EE6F40 /* map0712.txt in Resources */,
+				866F09FB1810E5E300839002 /* tilenamekey.txt in Resources */,
 				86910517180C8C2400EE6F40 /* map1112.txt in Resources */,
 				869105B4180C8C2500EE6F40 /* w080404.txt in Resources */,
 				869104DA180C8C2400EE6F40 /* map0602.txt in Resources */,
@@ -1795,6 +1799,7 @@
 				8691034F180B3B3E00EE6F40 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		86910350180B3B3E00EE6F40 /* Build configuration list for PBXNativeTarget "CastleTestTests" */ = {
 			isa = XCConfigurationList;
@@ -1803,6 +1808,7 @@
 				86910352180B3B3E00EE6F40 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

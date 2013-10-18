@@ -1,0 +1,928 @@
+
+ Piedras que aparecen en el mundo 5:  
+
+ Agua caminable:  
+
+ Pamperse:  
+tiles[n_tiles++]=new CTile(tiles2_bmp,   182  
+
+
+ Objetos:  
+ Escaleras:  
+ladder_tile=n_tiles;
+
+ Piedras:  
+stone_tile=n_tiles;
+
+ Puertas de mundo:  
+wdoor_tile=n_tiles;
+
+door_tile=n_tiles;
+
+
+ Puertas con llave:  
+keydoor_tile=n_tiles;
+
+ Transportadores:  
+lever_tile=n_tiles;
+ Este tile tiene 2 flags, T_WALL y T_LADDER_WALL, sirve para indicar el caso especial de que 
+ las flechas no deben chocar con Èl! 
+tiles[n_tiles++]=new CTile(tiles2_bmp, 
+
+ Personaje: ---------------------  
+
+character_tile[0]=n_tiles;
+
+ Hit!  
+
+ Muerte:  
+
+ M·scara  
+   0,17,2,2, T_PLAYER MASCARAS  
+ 2,17,2,2, T_PLAYER
+ 4,17,2,2, T_PLAYER
+ 6,17,2,2, T_PLAYER
+ 8,17,2,2, T_PLAYER
+10,17,2,2, T_PLAYER,-1*TILE_UNIT,0
+10,17,2,2, T_PLAYER,-1*TILE_UNIT,0
+10,17,2,2, T_PLAYER,1*TILE_UNIT,0
+10,17,2,2, T_PLAYER,1*TILE_UNIT,0
+ 4,17,2,2, T_PLAYER
+ 4,17,2,2, T_PLAYER
+   0,17,2,2, T_PLAYER MASCARAS  
+   0,17,2,2, T_PLAYER MASCARAS  
+30,10,2,2, T_PLAYER,1*TILE_UNIT,0
+32,10,2,2, T_PLAYER,1*TILE_UNIT,0
+34,10,2,2, T_PLAYER,1*TILE_UNIT,0
+36,10,2,2, T_PLAYER,1*TILE_UNIT,0
+38,10,2,2, T_PLAYER,1*TILE_UNIT,0
+
+character_tile_inv[0]=n_tiles;
+   0,15,2,2, T_PLAYER,2*TILE_UNIT,0
+ 2,15,2,2, T_PLAYER,2*TILE_UNIT,0
+ 4,15,2,2, T_PLAYER,2*TILE_UNIT,0
+ 6,15,2,2, T_PLAYER,5*TILE_UNIT,0
+ 8,15,2,2, T_PLAYER,2*TILE_UNIT,0
+10,15,2,2, T_PLAYER,-1*TILE_UNIT,0
+12,15,2,2, T_PLAYER,-1*TILE_UNIT,0
+14,15,2,2, T_PLAYER,1*TILE_UNIT,0
+16,15,2,2, T_PLAYER,1*TILE_UNIT,0
+
+ Hit!  
+20,17,2,2, T_PLAYER,1*TILE_UNIT,0
+22,17,2,2, T_PLAYER,1*TILE_UNIT,0
+12,20,2,2, T_PLAYER,1*TILE_UNIT,0
+14,20,2,2, T_PLAYER,1*TILE_UNIT,0
+
+ Muerte:  
+30,8,2,2, T_PLAYER,1*TILE_UNIT,0
+32,8,2,2, T_PLAYER,1*TILE_UNIT,0
+34,8,2,2, T_PLAYER,1*TILE_UNIT,0
+36,8,2,2, T_PLAYER,1*TILE_UNIT,0
+38,8,2,2, T_PLAYER,1*TILE_UNIT,0
+
+ Mascara - inv  
+   0,19,2,2, T_PLAYER,2*TILE_UNIT,0 MASCARAS  
+ 2,19,2,2, T_PLAYER,2*TILE_UNIT,0
+ 4,19,2,2, T_PLAYER,2*TILE_UNIT,0
+ 6,19,2,2, T_PLAYER,2*TILE_UNIT,0
+ 8,19,2,2, T_PLAYER,2*TILE_UNIT,0
+10,19,2,2, T_PLAYER,-1*TILE_UNIT,0
+10,19,2,2, T_PLAYER,-1*TILE_UNIT,0
+10,19,2,2, T_PLAYER,1*TILE_UNIT,0
+10,19,2,2, T_PLAYER,1*TILE_UNIT,0
+ 4,19,2,2, T_PLAYER,2*TILE_UNIT,0
+ 4,19,2,2, T_PLAYER,2*TILE_UNIT,0
+   0,19,2,2, T_PLAYER,2*TILE_UNIT,0 MASCARAS  
+   0,19,2,2, T_PLAYER,2*TILE_UNIT,0 MASCARAS  
+30,8,2,2, T_PLAYER,1*TILE_UNIT,0
+32,8,2,2, T_PLAYER,1*TILE_UNIT,0
+34,8,2,2, T_PLAYER,1*TILE_UNIT,0
+36,8,2,2, T_PLAYER,1*TILE_UNIT,0
+38,8,2,2, T_PLAYER,1*TILE_UNIT,0
+
+ Espada:  
+sword_tile[0]=n_tiles;
+18,13,2,2, T_WEAPON
+18,15,2,2, T_WEAPON
+
+
+character_tile[1]=n_tiles;
+20,13,2,2, T_PLAYER
+22,13,2,2, T_PLAYER
+24,13,2,2, T_PLAYER
+26,13,2,2, T_PLAYER,-3*TILE_UNIT,0
+28,13,2,2, T_PLAYER
+30,13,2,2, T_PLAYER,-1*TILE_UNIT,0
+32,13,2,2, T_PLAYER,-1*TILE_UNIT,0
+34,13,2,2, T_PLAYER,1*TILE_UNIT,0
+36,13,2,2, T_PLAYER,1*TILE_UNIT,0
+
+ Hit!  
+24,17,2,2, T_PLAYER,1*TILE_UNIT,0
+26,17,2,2, T_PLAYER,1*TILE_UNIT,0
+28,17,2,2, T_PLAYER,1*TILE_UNIT,0
+30,17,2,2, T_PLAYER,1*TILE_UNIT,0
+
+ Muerte:  
+30,6,2,2, T_PLAYER,1*TILE_UNIT,0
+32,6,2,2, T_PLAYER,1*TILE_UNIT,0
+34,6,2,2, T_PLAYER,1*TILE_UNIT,0
+36,6,2,2, T_PLAYER,1*TILE_UNIT,0
+38,6,2,2, T_PLAYER,1*TILE_UNIT,0
+
+ M·scara  
+   0,17,2,2, T_PLAYER MASCARAS  
+ 2,17,2,2, T_PLAYER
+ 4,17,2,2, T_PLAYER
+ 6,17,2,2, T_PLAYER
+ 8,17,2,2, T_PLAYER
+10,17,2,2, T_PLAYER,-1*TILE_UNIT,0
+10,17,2,2, T_PLAYER,-1*TILE_UNIT,0
+10,17,2,2, T_PLAYER,1*TILE_UNIT,0
+10,17,2,2, T_PLAYER,1*TILE_UNIT,0
+ 4,17,2,2, T_PLAYER
+ 4,17,2,2, T_PLAYER
+   0,17,2,2, T_PLAYER MASCARAS  
+   0,17,2,2, T_PLAYER MASCARAS  
+30,6,2,2, T_PLAYER,1*TILE_UNIT,0
+32,6,2,2, T_PLAYER,1*TILE_UNIT,0
+34,6,2,2, T_PLAYER,1*TILE_UNIT,0
+36,6,2,2, T_PLAYER,1*TILE_UNIT,0
+38,6,2,2, T_PLAYER,1*TILE_UNIT,0
+
+character_tile_inv[1]=n_tiles;
+20,15,2,2, T_PLAYER,2*TILE_UNIT,0
+22,15,2,2, T_PLAYER,2*TILE_UNIT,0
+24,15,2,2, T_PLAYER,2*TILE_UNIT,0
+26,15,2,2, T_PLAYER,5*TILE_UNIT,0
+28,15,2,2, T_PLAYER,2*TILE_UNIT,0
+30,15,2,2, T_PLAYER,-1*TILE_UNIT,0
+32,15,2,2, T_PLAYER,-1*TILE_UNIT,0
+34,15,2,2, T_PLAYER,1*TILE_UNIT,0
+36,15,2,2, T_PLAYER,1*TILE_UNIT,0
+
+ Hit!  
+20,17,2,2, T_PLAYER,1*TILE_UNIT,0
+22,17,2,2, T_PLAYER,1*TILE_UNIT,0
+12,20,2,2, T_PLAYER,1*TILE_UNIT,0
+14,20,2,2, T_PLAYER,1*TILE_UNIT,0
+
+ Muerte:  
+30,4,2,2, T_PLAYER,1*TILE_UNIT,0
+32,4,2,2, T_PLAYER,1*TILE_UNIT,0
+34,4,2,2, T_PLAYER,1*TILE_UNIT,0
+36,4,2,2, T_PLAYER,1*TILE_UNIT,0
+38,4,2,2, T_PLAYER,1*TILE_UNIT,0
+
+ Mascara - inv  
+   0,19,2,2, T_PLAYER,2*TILE_UNIT,0 MASCARAS  
+ 2,19,2,2, T_PLAYER,2*TILE_UNIT,0
+ 4,19,2,2, T_PLAYER,2*TILE_UNIT,0
+ 6,19,2,2, T_PLAYER,2*TILE_UNIT,0
+ 8,19,2,2, T_PLAYER,2*TILE_UNIT,0
+10,19,2,2, T_PLAYER,-1*TILE_UNIT,0
+10,19,2,2, T_PLAYER,-1*TILE_UNIT,0
+10,19,2,2, T_PLAYER,1*TILE_UNIT,0
+10,19,2,2, T_PLAYER,1*TILE_UNIT,0
+ 4,19,2,2, T_PLAYER,2*TILE_UNIT,0
+ 4,19,2,2, T_PLAYER,2*TILE_UNIT,0
+   0,19,2,2, T_PLAYER,2*TILE_UNIT,0 MASCARAS  
+   0,19,2,2, T_PLAYER,2*TILE_UNIT,0 MASCARAS  
+30,8,2,2, T_PLAYER,1*TILE_UNIT,0
+32,8,2,2, T_PLAYER,1*TILE_UNIT,0
+34,8,2,2, T_PLAYER,1*TILE_UNIT,0
+36,8,2,2, T_PLAYER,1*TILE_UNIT,0
+38,8,2,2, T_PLAYER,1*TILE_UNIT,0
+
+ Espada:  
+sword_tile[1]=n_tiles;
+38,13,2,2, T_WEAPON
+38,15,2,2, T_WEAPON
+
+ When HIT:  
+character_tile[2]=n_tiles;
+tiles[n_tiles++]=new CTile(tiles2_bmp,   0,18,2,2, T_PLAYER
+tiles[n_tiles++]=new CTile(tiles2_bmp, 2,18,2,2, T_PLAYER
+tiles[n_tiles++]=new CTile(tiles2_bmp, 4,18,2,2, T_PLAYER
+tiles[n_tiles++]=new CTile(tiles2_bmp, 6,18,2,2, T_PLAYER,-3*TILE_UNIT,0
+tiles[n_tiles++]=new CTile(tiles2_bmp, 8,18,2,2, T_PLAYER
+tiles[n_tiles++]=new CTile(tiles2_bmp,10,18,2,2, T_PLAYER,-1*TILE_UNIT,0
+tiles[n_tiles++]=new CTile(tiles2_bmp,12,18,2,2, T_PLAYER,-1*TILE_UNIT,0
+tiles[n_tiles++]=new CTile(tiles2_bmp,14,18,2,2, T_PLAYER,1*TILE_UNIT,0
+tiles[n_tiles++]=new CTile(tiles2_bmp,16,18,2,2, T_PLAYER,1*TILE_UNIT,0
+
+character_tile_inv[2]=n_tiles;
+tiles[n_tiles++]=new CTile(tiles2_bmp,   0,20,2,2, T_PLAYER,2*TILE_UNIT,0
+tiles[n_tiles++]=new CTile(tiles2_bmp, 2,20,2,2, T_PLAYER,2*TILE_UNIT,0
+tiles[n_tiles++]=new CTile(tiles2_bmp, 4,20,2,2, T_PLAYER,2*TILE_UNIT,0
+tiles[n_tiles++]=new CTile(tiles2_bmp, 6,20,2,2, T_PLAYER,5*TILE_UNIT,0
+tiles[n_tiles++]=new CTile(tiles2_bmp, 8,20,2,2, T_PLAYER,2*TILE_UNIT,0
+tiles[n_tiles++]=new CTile(tiles2_bmp,10,20,2,2, T_PLAYER,-1*TILE_UNIT,0
+tiles[n_tiles++]=new CTile(tiles2_bmp,12,20,2,2, T_PLAYER,-1*TILE_UNIT,0
+tiles[n_tiles++]=new CTile(tiles2_bmp,14,20,2,2, T_PLAYER,1*TILE_UNIT,0
+tiles[n_tiles++]=new CTile(tiles2_bmp,16,20,2,2, T_PLAYER,1*TILE_UNIT,0
+
+
+ Marcadores:  
+stats_tile=n_tiles;
+2,22,30,3,0
+0,10,2,2,0
+2,10,2,2,0
+29,2,2,2, T_WALL
+31,2,2,2, T_WALL
+27,22,1,3,0
+28,22,1,3,0
+30,22,1,3,0
+
+ Objetos:  
+coin_tile=n_tiles;
+12,4,2,2,0
+arrow_tile=n_tiles;
+14,4,2,2,0
+key_tile=n_tiles;
+16,4,2,2,0
+items_tile=n_tiles;
+10,6,2,2,0
+12,6,2,2,0
+14,6,2,2,0
+16,6,2,2,0
+18,6,2,2,0
+20,6,2,2,0
+22,6,2,2,0
+24,6,2,2,0
+26,6,2,2,0
+28,6,2,2,0
+10,8,2,2,0
+12,8,2,2,0
+14,8,2,2,0
+16,8,2,2,0
+18,8,2,2,0
+20,8,2,2,0
+22,8,2,2,0
+24,8,2,2,0
+26,8,2,2,0
+28,8,2,2,0
+10,10,2,2,0
+12,10,2,2,0
+14,10,2,2,0
+16,10,2,2,0
+18,10,2,2,0
+20,10,2,2,0
+22,10,2,2,0
+24,10,2,2,0
+26,10,2,2,0
+28,10,2,2,0
+
+ 36, 19, 2,2, 0 
+ 34, 19, 2,2, 0
+
+18,4,2,2,0
+20,4,2,2,0
+22,4,2,2,0
+24,4,2,2,0
+26,4,2,2,0
+28,4,2,2,0
+
+ Armas:  
+armas_tile=n_tiles;
+6,7,2,1,T_WEAPON
+6,8,2,1,T_WEAPON
+6,9,1,1,T_WEAPON
+7,9,1,1,T_WEAPON
+6,10,2,1,T_WEAPON
+6,11,2,1,T_WEAPON
+
+4,7,2,1,T_WEAPON
+2,7,2,1,T_WEAPON
+22,3,1,1,T_WEAPON
+
+ Minas: +9  
+tiles[n_tiles++]=new CTile(tiles2_bmp,32,6,2,1,T_WEAPON
+tiles[n_tiles++]=new CTile(tiles2_bmp,34,6,2,1,T_WEAPON
+tiles[n_tiles++]=new CTile(tiles2_bmp,36,6,2,1,T_WEAPON
+tiles[n_tiles++]=new CTile(tiles2_bmp,32,3,4,3,T_WEAPON
+tiles[n_tiles++]=new CTile(tiles2_bmp,36,3,4,3,T_WEAPON
+
+ Armas inofensivas:  
+ Felchas: +14  
+6,7,2,1,T_NADA
+4,7,2,1,T_NADA
+ Flechas de cer·mica: +16  
+6,8,2,1,T_NADA
+2,7,2,1,T_NADA
+ Fuego: +18  
+7,9,1,1,T_NADA
+22,3,1,1,T_NADA
+6,9,1,1,T_NADA
+
+18,21,1,1,T_WEAPON
+
+ Explosion:  
+explosion_tile=n_tiles;
+4,8,2,2,0
+2,8,2,2,0
+0,8,2,2,0
+
+ Enemigos:  
+ Gusano:  
+worm_tile=n_tiles;
+tiles[n_tiles++]=new CTile(enemy_bmp,0,2,2,2,T_ENEMY
+tiles[n_tiles++]=new CTile(enemy_bmp,2,2,2,2,T_ENEMY
+tiles[n_tiles++]=new CTile(enemy_bmp,4,2,2,2,T_ENEMY
+tiles[n_tiles++]=new CTile(enemy_bmp,6,2,2,2,T_ENEMY
+tiles[n_tiles++]=new CTile(enemy_bmp,8,2,2,2,T_ENEMY
+tiles[n_tiles++]=new CTile(enemy_bmp,10,2,2,2,T_ENEMY
+
+ Murcielago:  
+bat_tile=n_tiles;
+tiles[n_tiles++]=new CTile(enemy_bmp,0,4,2,2,T_ENEMY
+tiles[n_tiles++]=new CTile(enemy_bmp,2,4,2,2,T_ENEMY
+tiles[n_tiles++]=new CTile(enemy_bmp,4,4,2,2,T_ENEMY
+
+ Esqueleto:  
+skeleton_tile=n_tiles;
+tiles[n_tiles++]=new CTile(enemy_bmp,0,0,2,2,T_ENEMY
+tiles[n_tiles++]=new CTile(enemy_bmp,2,0,2,2,T_ENEMY
+tiles[n_tiles++]=new CTile(enemy_bmp,4,0,2,2,T_ENEMY
+tiles[n_tiles++]=new CTile(enemy_bmp,6,0,2,2,T_ENEMY
+tiles[n_tiles++]=new CTile(enemy_bmp,8,0,2,2,0
+tiles[n_tiles++]=new CTile(enemy_bmp,10,0,2,2,0
+tiles[n_tiles++]=new CTile(enemy_bmp,12,0,2,2,0
+tiles[n_tiles++]=new CTile(enemy_bmp,14,0,2,2,T_ENEMY
+tiles[n_tiles++]=new CTile(enemy_bmp,16,0,2,2,T_ENEMY
+tiles[n_tiles++]=new CTile(enemy_bmp,18,0,2,2,T_ENEMY
+tiles[n_tiles++]=new CTile(enemy_bmp,20,0,2,2,T_ENEMY
+
+ Humo:  
+smoke_tile=n_tiles;
+tiles[n_tiles++]=new CTile(enemy_bmp,0,6,2,2,0
+tiles[n_tiles++]=new CTile(enemy_bmp,2,6,2,2,T_ENEMY
+tiles[n_tiles++]=new CTile(enemy_bmp,4,6,2,2,T_ENEMY
+tiles[n_tiles++]=new CTile(enemy_bmp,6,6,2,2,T_ENEMY
+tiles[n_tiles++]=new CTile(enemy_bmp,8,6,2,2,0
+tiles[n_tiles++]=new CTile(enemy_bmp,10,6,2,2,T_ENEMY
+tiles[n_tiles++]=new CTile(enemy_bmp,12,6,2,2,T_ENEMY
+tiles[n_tiles++]=new CTile(enemy_bmp,14,6,2,2,T_ENEMY
+
+ Orugas:  
+slime_tile=n_tiles;
+tiles[n_tiles++]=new CTile(enemy_bmp,6,4,2,2,T_ENEMY
+tiles[n_tiles++]=new CTile(enemy_bmp,8,4,2,2,T_ENEMY
+tiles[n_tiles++]=new CTile(enemy_bmp,10,4,2,2,T_ENEMY
+tiles[n_tiles++]=new CTile(enemy_bmp,12,4,2,2,T_ENEMY
+
+ Bolas que rebotan:  
+bouncingball_tile=n_tiles;
+tiles[n_tiles++]=new CTile(enemy_bmp,12,2,1,1,T_ENEMY
+
+ Monstruo del agua:  
+watermonster_tile=n_tiles;
+tiles[n_tiles++]=new CTile(enemy_bmp,0,10,3,2,T_ENEMY
+tiles[n_tiles++]=new CTile(enemy_bmp,4,10,1,1,T_ENEMY
+tiles[n_tiles++]=new CTile(enemy_bmp,4,11,1,1,T_ENEMY
+tiles[n_tiles++]=new CTile(enemy_bmp,3,11,1,1,T_ENEMY
+tiles[n_tiles++]=new CTile(enemy_bmp,3,10,1,1,T_ENEMY
+tiles[n_tiles++]=new CTile(enemy_bmp,5,10,3,2,0
+
+ Piedras que caen:  
+fstone_tile=n_tiles;
+tiles[n_tiles++]=new CTile(enemy_bmp,13,2,2,2,T_ENEMY
+tiles[n_tiles++]=new CTile(enemy_bmp,15,2,2,2,T_ENEMY
+tiles[n_tiles++]=new CTile(enemy_bmp,17,2,2,2,T_ENEMY
+tiles[n_tiles++]=new CTile(enemy_bmp,19,2,2,2,T_ENEMY
+
+ Caballero:  
+knight_tile=n_tiles;
+tiles[n_tiles++]=new CTile(enemy_bmp,22,0,2,2,T_ENEMY
+tiles[n_tiles++]=new CTile(enemy_bmp,24,0,2,2,T_ENEMY
+tiles[n_tiles++]=new CTile(enemy_bmp,26,0,2,2,T_ENEMY
+tiles[n_tiles++]=new CTile(enemy_bmp,28,0,2,2,T_ENEMY
+tiles[n_tiles++]=new CTile(enemy_bmp,30,0,2,2,T_ENEMY
+tiles[n_tiles++]=new CTile(enemy_bmp,32,0,2,2,T_ENEMY
+tiles[n_tiles++]=new CTile(enemy_bmp,34,0,2,2,T_ENEMY
+tiles[n_tiles++]=new CTile(enemy_bmp,36,0,2,2,T_ENEMY
+tiles[n_tiles++]=new CTile(enemy_bmp,22,2,2,2,T_ENEMY
+tiles[n_tiles++]=new CTile(enemy_bmp,24,2,2,2,T_ENEMY
+tiles[n_tiles++]=new CTile(enemy_bmp,38,2,2,2,T_ENEMY
+tiles[n_tiles++]=new CTile(enemy_bmp,38,0,2,2,T_ENEMY
+
+ Bola roja:  
+blob_tile=n_tiles;
+tiles[n_tiles++]=new CTile(enemy_bmp,14,4,2,2,T_ENEMY
+tiles[n_tiles++]=new CTile(enemy_bmp,16,4,2,2,T_ENEMY
+tiles[n_tiles++]=new CTile(enemy_bmp,14,8,2,2,T_ENEMY
+tiles[n_tiles++]=new CTile(enemy_bmp,34,2,2,2,T_ENEMY
+
+ Bamb˙:  
+bambu_tile=n_tiles;
+tiles[n_tiles++]=new CTile(enemy_bmp,26,2,2,2,0
+tiles[n_tiles++]=new CTile(enemy_bmp,28,2,2,2,T_ENEMY
+tiles[n_tiles++]=new CTile(enemy_bmp,30,2,2,2,T_ENEMY
+tiles[n_tiles++]=new CTile(enemy_bmp,32,2,2,2,T_ENEMY
+
+ Hada:  
+fairy_tile=n_tiles;
+tiles[n_tiles++]=new CTile(tiles2_bmp,0,12,2,2,0
+tiles[n_tiles++]=new CTile(tiles2_bmp,0,14,2,2,0
+tiles[n_tiles++]=new CTile(tiles2_bmp,2,12,2,2,0
+tiles[n_tiles++]=new CTile(tiles2_bmp,2,14,2,2,0
+tiles[n_tiles++]=new CTile(tiles2_bmp,4,12,2,2,0
+tiles[n_tiles++]=new CTile(tiles2_bmp,6,12,2,2,0
+
+tiles[n_tiles++]=new CTile(tiles2_bmp,8,12,1/2,1/2,0
+tiles[n_tiles++]=new CTile(tiles2_bmp,8+1/2,12,1/2,1/2,0
+tiles[n_tiles++]=new CTile(tiles2_bmp,9,12,1/2,1/2,0
+tiles[n_tiles++]=new CTile(tiles2_bmp,9+1/2,12,1/2,1/2,0
+tiles[n_tiles++]=new CTile(tiles2_bmp,10,12,1/2,1/2,0
+tiles[n_tiles++]=new CTile(tiles2_bmp,10+1/2,12,1/2,1/2,0
+tiles[n_tiles++]=new CTile(tiles2_bmp,11,12,1/2,1/2,0
+tiles[n_tiles++]=new CTile(tiles2_bmp,11+1/2,12,1/2,1/2,0
+tiles[n_tiles++]=new CTile(tiles2_bmp,12,12,1/2,1/2,0
+tiles[n_tiles++]=new CTile(tiles2_bmp,12+1/2,12,1/2,1/2,0
+tiles[n_tiles++]=new CTile(tiles2_bmp,13,12,1/2,1/2,0
+tiles[n_tiles++]=new CTile(tiles2_bmp,13+1/2,12,1/2,1/2,0
+tiles[n_tiles++]=new CTile(tiles2_bmp,14,12,1/2,1/2,0
+tiles[n_tiles++]=new CTile(tiles2_bmp,14+1/2,12,1/2,1/2,0
+tiles[n_tiles++]=new CTile(tiles2_bmp,15,12,1/2,1/2,0
+tiles[n_tiles++]=new CTile(tiles2_bmp,15+1/2,12,1/2,1/2,0
+
+ PuercoespÌn:  
+porcupine_tile=n_tiles;
+tiles[n_tiles++]=new CTile(enemy_bmp,18,4,2,2,T_ENEMY
+tiles[n_tiles++]=new CTile(enemy_bmp,20,4,2,2,T_ENEMY
+tiles[n_tiles++]=new CTile(enemy_bmp,22,4,2,2,T_ENEMY
+tiles[n_tiles++]=new CTile(enemy_bmp,24,4,2,2,T_ENEMY
+tiles[n_tiles++]=new CTile(enemy_bmp,26,4,2,2,T_ENEMY
+tiles[n_tiles++]=new CTile(enemy_bmp,28,4,2,2,T_ENEMY
+tiles[n_tiles++]=new CTile(enemy_bmp,30,4,2,2,T_ENEMY
+tiles[n_tiles++]=new CTile(enemy_bmp,32,4,2,2,T_ENEMY
+tiles[n_tiles++]=new CTile(enemy_bmp,34,4,2,2,T_ENEMY
+
+ Fuego que salta de la lava:  
+lava_tile=n_tiles;
+tiles[n_tiles++]=new CTile(enemy_bmp,8,10,2,2,T_ENEMY
+tiles[n_tiles++]=new CTile(enemy_bmp,10,10,2,2,T_ENEMY
+tiles[n_tiles++]=new CTile(enemy_bmp,8,12,2,2,T_ENEMY
+tiles[n_tiles++]=new CTile(enemy_bmp,10,12,2,2,T_ENEMY
+tiles[n_tiles++]=new CTile(enemy_bmp,12,10,2,2,T_ENEMY
+tiles[n_tiles++]=new CTile(enemy_bmp,12,12,2,2,T_ENEMY
+
+ Arbusto saltarÌn:  
+jumpingbush_tile=n_tiles;
+tiles[n_tiles++]=new CTile(enemy_bmp,0,8,2,2,T_ENEMY
+
+ AraÒa azul:  
+bluespider_tile=n_tiles;
+tiles[n_tiles++]=new CTile(enemy_bmp,0,12,2,2,T_ENEMY
+tiles[n_tiles++]=new CTile(enemy_bmp,2,12,2,2,T_ENEMY
+tiles[n_tiles++]=new CTile(enemy_bmp,4,12,2,2,T_ENEMY
+
+ Bolas de fuego blanco:  
+whitefireball_tile=n_tiles;
+tiles[n_tiles++]=new CTile(enemy_bmp,0,14,2,2,T_ENEMY
+tiles[n_tiles++]=new CTile(enemy_bmp,2,14,2,2,T_ENEMY
+tiles[n_tiles++]=new CTile(enemy_bmp,4,14,2,2,T_ENEMY
+tiles[n_tiles++]=new CTile(enemy_bmp,6,14,2,2,T_ENEMY
+tiles[n_tiles++]=new CTile(enemy_bmp,8,14,2,2,T_ENEMY
+tiles[n_tiles++]=new CTile(enemy_bmp,10,14,2,2,T_ENEMY
+tiles[n_tiles++]=new CTile(enemy_bmp,12,14,2,2,T_ENEMY
+tiles[n_tiles++]=new CTile(enemy_bmp,14,14,2,2,T_ENEMY
+
+ Bicho negro del mundo 2:  
+black_tile=n_tiles;
+tiles[n_tiles++]=new CTile(enemy_bmp,18,6,2,2,T_ENEMY
+
+ Bruja:  
+witch_tile=n_tiles;
+tiles[n_tiles++]=new CTile(enemy_bmp,16,6,2,2,T_ENEMY
+
+ Osos blancos del mundo 2:  
+whitebear_tile=n_tiles;
+tiles[n_tiles++]=new CTile(enemy_bmp,20,6,2,2,T_ENEMY
+tiles[n_tiles++]=new CTile(enemy_bmp,22,6,2,2,T_ENEMY
+tiles[n_tiles++]=new CTile(enemy_bmp,24,6,2,2,T_ENEMY
+tiles[n_tiles++]=new CTile(enemy_bmp,26,6,2,2,T_ENEMY
+tiles[n_tiles++]=new CTile(enemy_bmp,28,6,2,2,T_ENEMY
+tiles[n_tiles++]=new CTile(enemy_bmp,30,6,2,2,T_ENEMY
+
+ Pies de piedra:  
+feet_tile=n_tiles;
+tiles[n_tiles++]=new CTile(enemy_bmp,2,8,2,2,T_ENEMY
+tiles[n_tiles++]=new CTile(enemy_bmp,4,8,2,2,T_ENEMY
+tiles[n_tiles++]=new CTile(enemy_bmp,6,8,2,2,T_ENEMY
+tiles[n_tiles++]=new CTile(enemy_bmp,8,8,2,2,T_ENEMY
+tiles[n_tiles++]=new CTile(enemy_bmp,10,8,2,2,T_ENEMY
+tiles[n_tiles++]=new CTile(enemy_bmp,12,8,2,2,T_ENEMY
+
+ Bicho rojo saltarin:  
+redjumper_tile=n_tiles;
+tiles[n_tiles++]=new CTile(enemy_bmp,16,8,2,2,T_ENEMY
+tiles[n_tiles++]=new CTile(enemy_bmp,18,8,2,2,T_ENEMY
+tiles[n_tiles++]=new CTile(enemy_bmp,20,8,2,2,T_ENEMY
+tiles[n_tiles++]=new CTile(enemy_bmp,22,8,2,2,T_ENEMY
+tiles[n_tiles++]=new CTile(enemy_bmp,24,8,2,2,T_ENEMY
+tiles[n_tiles++]=new CTile(enemy_bmp,26,8,2,2,T_ENEMY
+
+ Muro viviente:  
+livingwall_tile=n_tiles;
+tiles[n_tiles++]=new CTile(enemy_bmp,36,2,2,3,T_WALL
+
+ Megamurcielago:  
+megabat_tile=n_tiles;
+tiles[n_tiles++]=new CTile(enemy_bmp,32,6,4,2,T_ENEMY
+tiles[n_tiles++]=new CTile(enemy_bmp,36,6,4,2,T_ENEMY
+tiles[n_tiles++]=new CTile(enemy_bmp,36,5,2,1,T_ENEMY
+tiles[n_tiles++]=new CTile(enemy_bmp,38,5,2,1,T_ENEMY
+
+ PiraÒas:  
+piranha_tile=n_tiles;
+tiles[n_tiles++]=new CTile(enemy_bmp,14,10,2,2,T_ENEMY
+tiles[n_tiles++]=new CTile(enemy_bmp,16,10,2,2,T_ENEMY
+tiles[n_tiles++]=new CTile(enemy_bmp,16,12,2,2,T_ENEMY
+tiles[n_tiles++]=new CTile(enemy_bmp,18,12,2,2,T_ENEMY
+tiles[n_tiles++]=new CTile(enemy_bmp,14,12,2,2,T_ENEMY
+
+ Estrellas blancas:  
+whitestar_tile=n_tiles;
+tiles[n_tiles++]=new CTile(enemy_bmp,18,10,2,2,T_ENEMY
+tiles[n_tiles++]=new CTile(enemy_bmp,20,10,2,2,T_ENEMY
+
+ AraÒas:  
+spider_tile=n_tiles;
+tiles[n_tiles++]=new CTile(enemy_bmp,37,10,1,3,T_ENEMY
+tiles[n_tiles++]=new CTile(enemy_bmp,37,13,1,3,T_ENEMY
+tiles[n_tiles++]=new CTile(enemy_bmp,24,10,1,3,T_ENEMY
+
+ Cabeza de caballero:  
+knighthead_tile=n_tiles;
+tiles[n_tiles++]=new CTile(enemy_bmp,28,8,2,2,T_ENEMY
+tiles[n_tiles++]=new CTile(enemy_bmp,30,8,2,2,T_ENEMY
+tiles[n_tiles++]=new CTile(enemy_bmp,32,8,1,1,T_ENEMY
+
+ Pollos:  
+chicken_tile=n_tiles;
+tiles[n_tiles++]=new CTile(enemy_bmp,25,10,2,2,T_ENEMY
+tiles[n_tiles++]=new CTile(enemy_bmp,27,10,2,2,T_ENEMY
+tiles[n_tiles++]=new CTile(enemy_bmp,29,10,2,2,T_ENEMY
+tiles[n_tiles++]=new CTile(enemy_bmp,31,10,2,2,T_ENEMY
+tiles[n_tiles++]=new CTile(enemy_bmp,33,10,2,2,T_ENEMY
+tiles[n_tiles++]=new CTile(enemy_bmp,35,10,2,2,T_ENEMY
+tiles[n_tiles++]=new CTile(enemy_bmp,25,12,4,4,T_ENEMY
+tiles[n_tiles++]=new CTile(enemy_bmp,29,12,4,4,T_ENEMY
+
+ Hombres-roca:  
+rockman_tile=n_tiles;
+tiles[n_tiles++]=new CTile(enemy_bmp,33,14,2,2,T_NADA
+tiles[n_tiles++]=new CTile(enemy_bmp,34,8,2,2,T_NADA
+tiles[n_tiles++]=new CTile(enemy_bmp,36,8,2,2,T_NADA
+tiles[n_tiles++]=new CTile(enemy_bmp,38,8,2,2,T_ENEMY
+tiles[n_tiles++]=new CTile(enemy_bmp,38,10,2,2,T_ENEMY
+tiles[n_tiles++]=new CTile(enemy_bmp,38,12,2,2,T_ENEMY
+tiles[n_tiles++]=new CTile(enemy_bmp,38,14,2,2,T_ENEMY
+
+ Nubes:  
+cloud_tile=n_tiles;
+tiles[n_tiles++]=new CTile(enemy_bmp,33,12,2,2,T_ENEMY
+tiles[n_tiles++]=new CTile(enemy_bmp,35,12,2,2,T_ENEMY
+
+ Mariposas:  
+bfly_tile=n_tiles;
+tiles[n_tiles++]=new CTile(enemy_bmp,0,17,1,1,T_ENEMY
+tiles[n_tiles++]=new CTile(enemy_bmp,0,16,1,1,T_ENEMY
+tiles[n_tiles++]=new CTile(enemy_bmp,1,16,1,1,T_ENEMY
+tiles[n_tiles++]=new CTile(enemy_bmp,2*1,16,2,2,T_ENEMY
+tiles[n_tiles++]=new CTile(enemy_bmp,4*1,16,2,2,T_ENEMY
+tiles[n_tiles++]=new CTile(enemy_bmp,6*1,16,2,2,T_ENEMY
+tiles[n_tiles++]=new CTile(enemy_bmp,8*1,16,2,2,T_ENEMY
+tiles[n_tiles++]=new CTile(enemy_bmp,10*1,16,4,3,T_ENEMY
+tiles[n_tiles++]=new CTile(enemy_bmp,14*1,16,4,3,T_ENEMY
+
+ Fantasmas:  
+ghost_tile=n_tiles;
+tiles[n_tiles++]=new CTile(enemy_bmp,16,14,2,2,T_ENEMY
+tiles[n_tiles++]=new CTile(enemy_bmp,18,14,2,2,T_ENEMY
+tiles[n_tiles++]=new CTile(enemy_bmp,1,17,1,1,T_ENEMY
+
+ Cabezas:  
+head_tile=n_tiles;
+tiles[n_tiles++]=new CTile(enemy_bmp,20,14,2,2,T_WALL
+tiles[n_tiles++]=new CTile(enemy_bmp,22,14,2,2,T_WALL
+tiles[n_tiles++]=new CTile(enemy_bmp,20,16,2,2,T_WALL
+tiles[n_tiles++]=new CTile(enemy_bmp,22,16,2,2,T_WALL
+tiles[n_tiles++]=new CTile(enemy_bmp,18,16,2,2,T_ENEMY
+
+ Flechas de las armaduras:  
+armourarrow_tile=n_tiles;
+8,9,2,1,T_ENEMY
+8,10,2,1,T_ENEMY
+
+ Gusanos del mundo 5:  
+worm2_tile=n_tiles;
+tiles[n_tiles++]=new CTile(enemy_bmp,0,18,2,2,T_ENEMY
+tiles[n_tiles++]=new CTile(enemy_bmp,2,18,2,2,T_ENEMY
+tiles[n_tiles++]=new CTile(enemy_bmp,4,18,2,2,T_ENEMY
+tiles[n_tiles++]=new CTile(enemy_bmp,6,18,2,2,T_ENEMY
+
+ Pulpillos del mundo 5:  
+octopus_tile=n_tiles;
+tiles[n_tiles++]=new CTile(enemy_bmp,8,18,2,2,T_ENEMY
+tiles[n_tiles++]=new CTile(enemy_bmp,8,20,2,2,T_ENEMY
+tiles[n_tiles++]=new CTile(enemy_bmp,8,22,2,2,T_ENEMY
+tiles[n_tiles++]=new CTile(enemy_bmp,10,19,2,2,T_ENEMY
+tiles[n_tiles++]=new CTile(enemy_bmp,10,21,2,2,T_ENEMY
+tiles[n_tiles++]=new CTile(enemy_bmp,10,23,2,2,T_ENEMY
+tiles[n_tiles++]=new CTile(enemy_bmp,12,19,2,2,T_ENEMY
+tiles[n_tiles++]=new CTile(enemy_bmp,12,21,2,2,T_ENEMY
+tiles[n_tiles++]=new CTile(enemy_bmp,12,23,2,2,T_ENEMY
+tiles[n_tiles++]=new CTile(enemy_bmp,14,19,2,2,T_ENEMY
+tiles[n_tiles++]=new CTile(enemy_bmp,14,21,2,2,T_ENEMY
+tiles[n_tiles++]=new CTile(enemy_bmp,14,23,2,2,T_ENEMY
+tiles[n_tiles++]=new CTile(enemy_bmp,16,19,2,2,T_ENEMY
+tiles[n_tiles++]=new CTile(enemy_bmp,16,21,2,2,T_ENEMY
+tiles[n_tiles++]=new CTile(enemy_bmp,16,23,2,2,T_ENEMY
+tiles[n_tiles++]=new CTile(enemy_bmp,6,12,2,2,T_ENEMY
+
+ Bicho peludo del mundo 5:  
+hairy_tile=n_tiles;
+tiles[n_tiles++]=new CTile(enemy_bmp,18,18,3,3,T_ENEMY
+tiles[n_tiles++]=new CTile(enemy_bmp,21,18,3,3,T_ENEMY
+tiles[n_tiles++]=new CTile(enemy_bmp,12,3,1,1,T_ENEMY
+tiles[n_tiles++]=new CTile(enemy_bmp,21,2,1,2,T_ENEMY
+tiles[n_tiles++]=new CTile(enemy_bmp,38,4,2,1,T_ENEMY
+tiles[n_tiles++]=new CTile(enemy_bmp,33,8,1,2,T_ENEMY
+
+ Waterdragon:  
+waterdragon_tile=n_tiles;
+tiles[n_tiles++]=new CTile(enemy_bmp,0,20,4,2,T_ENEMY
+tiles[n_tiles++]=new CTile(enemy_bmp,0,22,4,2,T_ENEMY
+tiles[n_tiles++]=new CTile(enemy_bmp,4,20,4,2,T_ENEMY
+tiles[n_tiles++]=new CTile(enemy_bmp,4,22,4,2,T_ENEMY
+
+ Water bug del mundo 5:  
+waterbug_tile=n_tiles;
+tiles[n_tiles++]=new CTile(enemy_bmp,0,24,2,1,T_ENEMY
+tiles[n_tiles++]=new CTile(enemy_bmp,2,24,2,1,T_ENEMY
+tiles[n_tiles++]=new CTile(enemy_bmp,4,24,2,1,T_ENEMY
+tiles[n_tiles++]=new CTile(enemy_bmp,6,24,2,1,T_ENEMY
+
+ Pajaros del mundo 6:  
+bird_tile=n_tiles;
+tiles[n_tiles++]=new CTile(enemy_bmp,18,21,2,2,T_ENEMY
+tiles[n_tiles++]=new CTile(enemy_bmp,18,23,2,2,T_ENEMY
+tiles[n_tiles++]=new CTile(enemy_bmp,34,21,2,2,T_ENEMY
+tiles[n_tiles++]=new CTile(enemy_bmp,34,23,2,2,T_ENEMY
+
+ Stonemans del mundo 6:  
+stoneman_tile=n_tiles;
+tiles[n_tiles++]=new CTile(enemy_bmp,13,2,2,2,T_ENEMY
+tiles[n_tiles++]=new CTile(enemy_bmp,20,21,2,2,T_ENEMY
+tiles[n_tiles++]=new CTile(enemy_bmp,20,23,2,2,T_ENEMY
+tiles[n_tiles++]=new CTile(enemy_bmp,22,21,2,2,T_ENEMY
+tiles[n_tiles++]=new CTile(enemy_bmp,22,23,2,2,T_ENEMY
+tiles[n_tiles++]=new CTile(enemy_bmp,24,21,2,2,T_ENEMY
+tiles[n_tiles++]=new CTile(enemy_bmp,24,23,2,2,T_ENEMY
+tiles[n_tiles++]=new CTile(enemy_bmp,24,15,1,1,T_ENEMY
+
+ Pacman del mundo 6:  
+pacman_tile=n_tiles;
+tiles[n_tiles++]=new CTile(enemy_bmp,30,16,2,2,T_ENEMY
+tiles[n_tiles++]=new CTile(enemy_bmp,30,18,2,2,T_ENEMY
+tiles[n_tiles++]=new CTile(enemy_bmp,28,16,2,2,T_ENEMY
+tiles[n_tiles++]=new CTile(enemy_bmp,28,18,2,2,T_ENEMY
+tiles[n_tiles++]=new CTile(enemy_bmp,26,16,2,2,T_ENEMY
+tiles[n_tiles++]=new CTile(enemy_bmp,26,18,2,2,T_ENEMY
+tiles[n_tiles++]=new CTile(enemy_bmp,24,16,2,2,T_ENEMY
+tiles[n_tiles++]=new CTile(enemy_bmp,24,18,2,2,T_ENEMY
+
+tiles[n_tiles++]=new CTile(enemy_bmp,20,12,2,2,T_ENEMY
+tiles[n_tiles++]=new CTile(enemy_bmp,35,14,2,2,T_ENEMY
+tiles[n_tiles++]=new CTile(enemy_bmp,38,16,2,2,T_ENEMY
+tiles[n_tiles++]=new CTile(enemy_bmp,38,18,2,2,T_ENEMY
+tiles[n_tiles++]=new CTile(enemy_bmp,36,16,2,2,T_ENEMY
+tiles[n_tiles++]=new CTile(enemy_bmp,36,18,2,2,T_ENEMY
+tiles[n_tiles++]=new CTile(enemy_bmp,22,10,2,2,T_ENEMY
+tiles[n_tiles++]=new CTile(enemy_bmp,22,12,2,2,T_ENEMY
+
+ red dragon del mundo 6:  
+reddragon_tile=n_tiles;
+tiles[n_tiles++]=new CTile(enemy_bmp,26,21,4,4,T_ENEMY
+tiles[n_tiles++]=new CTile(enemy_bmp,30,21,4,4,T_ENEMY
+tiles[n_tiles++]=new CTile(enemy_bmp,32,16,4,4,T_ENEMY
+tiles[n_tiles++]=new CTile(enemy_bmp,36,21,4,4,T_ENEMY
+tiles[n_tiles++]=new CTile(enemy_bmp,24,14,1,1,T_ENEMY
+
+ buho del mundo 7:  
+owl_tile=n_tiles;
+tiles[n_tiles++]=new CTile(enemy2_bmp,0,0,2,2,T_ENEMY
+tiles[n_tiles++]=new CTile(enemy2_bmp,2,0,2,2,T_ENEMY
+tiles[n_tiles++]=new CTile(enemy2_bmp,4,0,2,2,T_ENEMY
+tiles[n_tiles++]=new CTile(enemy2_bmp,6,0,2,2,T_ENEMY
+
+ mono verde del mundo 7:  
+greenmonkey_tile=n_tiles;
+tiles[n_tiles++]=new CTile(enemy2_bmp,0,2,2,2,T_ENEMY
+tiles[n_tiles++]=new CTile(enemy2_bmp,2,2,2,2,T_ENEMY
+tiles[n_tiles++]=new CTile(enemy2_bmp,4,2,2,2,T_ENEMY
+tiles[n_tiles++]=new CTile(enemy2_bmp,6,2,2,2,T_ENEMY
+tiles[n_tiles++]=new CTile(enemy2_bmp,8,2,2,2,T_ENEMY
+tiles[n_tiles++]=new CTile(enemy2_bmp,10,2,2,2,T_ENEMY
+
+ planta del mundo 7:  
+plant_tile=n_tiles;
+tiles[n_tiles++]=new CTile(enemy2_bmp,0,4,2,2,T_ENEMY
+tiles[n_tiles++]=new CTile(enemy2_bmp,2,4,2,2,T_ENEMY
+tiles[n_tiles++]=new CTile(enemy2_bmp,4,4,1,1,T_ENEMY
+
+ Cambiante del mundo 8:  
+transformer_tile=n_tiles;
+tiles[n_tiles++]=new CTile(enemy2_bmp,0,10,2,2,T_ENEMY
+tiles[n_tiles++]=new CTile(enemy2_bmp,2,10,2,2,T_ENEMY
+tiles[n_tiles++]=new CTile(enemy2_bmp,4,10,2,2,T_ENEMY
+tiles[n_tiles++]=new CTile(enemy2_bmp,6,10,2,2,T_ENEMY
+tiles[n_tiles++]=new CTile(enemy2_bmp,8,10,2,2,T_ENEMY
+tiles[n_tiles++]=new CTile(enemy2_bmp,10,10,2,2,T_ENEMY
+tiles[n_tiles++]=new CTile(enemy2_bmp,12,10,2,2,T_ENEMY
+tiles[n_tiles++]=new CTile(enemy2_bmp,14,10,2,2,T_ENEMY
+tiles[n_tiles++]=new CTile(enemy2_bmp,16,10,2,2,T_ENEMY
+tiles[n_tiles++]=new CTile(enemy2_bmp,18,10,2,2,T_ENEMY
+tiles[n_tiles++]=new CTile(enemy2_bmp,20,10,1,1,T_ENEMY
+
+ Flame del mundo 8:  
+flame_tile=n_tiles;
+tiles[n_tiles++]=new CTile(enemy2_bmp,0,8,2,2,T_ENEMY
+tiles[n_tiles++]=new CTile(enemy2_bmp,2,8,2,2,T_ENEMY
+tiles[n_tiles++]=new CTile(enemy2_bmp,4,8,2,2,T_ENEMY
+tiles[n_tiles++]=new CTile(enemy2_bmp,6,8,2,2,T_ENEMY
+tiles[n_tiles++]=new CTile(enemy2_bmp,8,8,2,2,T_ENEMY
+tiles[n_tiles++]=new CTile(enemy2_bmp,10,8,2,2,T_ENEMY
+tiles[n_tiles++]=new CTile(enemy2_bmp,12,8,2,2,T_ENEMY
+tiles[n_tiles++]=new CTile(enemy2_bmp,14,8,2,2,T_ENEMY
+tiles[n_tiles++]=new CTile(enemy2_bmp,16,8,1,1,T_ENEMY
+
+ Brujas del mundo 8:  
+witch2_tile=n_tiles;
+tiles[n_tiles++]=new CTile(enemy2_bmp,0,6,2,2,T_ENEMY
+tiles[n_tiles++]=new CTile(enemy2_bmp,2,6,2,2,T_ENEMY
+tiles[n_tiles++]=new CTile(enemy2_bmp,4,6,2,2,T_ENEMY
+tiles[n_tiles++]=new CTile(enemy2_bmp,6,6,2,2,T_ENEMY
+tiles[n_tiles++]=new CTile(enemy2_bmp,8,6,2,2,T_ENEMY
+tiles[n_tiles++]=new CTile(enemy2_bmp,10,6,2,2,T_ENEMY
+tiles[n_tiles++]=new CTile(enemy2_bmp,12,6,2,2,T_ENEMY
+tiles[n_tiles++]=new CTile(enemy2_bmp,14,6,2,2,T_ENEMY
+
+ Ciclope del mundo 8:  
+cyclops_tile=n_tiles;
+tiles[n_tiles++]=new CTile(enemy2_bmp,0,12,4,4,T_ENEMY
+tiles[n_tiles++]=new CTile(enemy2_bmp,4,12,4,4,T_ENEMY
+tiles[n_tiles++]=new CTile(enemy2_bmp,8,12,2,2,T_ENEMY
+tiles[n_tiles++]=new CTile(enemy2_bmp,10,12,2,2,T_ENEMY
+tiles[n_tiles++]=new CTile(enemy2_bmp,12,12,2,2,T_ENEMY
+tiles[n_tiles++]=new CTile(enemy2_bmp,14,12,2,2,T_ENEMY
+
+ Serpientes del mundo 9:  
+snake_tile=n_tiles;
+tiles[n_tiles++]=new CTile(enemy2_bmp,8,0,2,2,T_ENEMY
+tiles[n_tiles++]=new CTile(enemy2_bmp,10,0,2,2,T_ENEMY
+tiles[n_tiles++]=new CTile(enemy2_bmp,12,0,2,2,T_ENEMY
+tiles[n_tiles++]=new CTile(enemy2_bmp,14,0,2,2,T_ENEMY
+tiles[n_tiles++]=new CTile(enemy2_bmp,16,0,2,2,T_ENEMY
+tiles[n_tiles++]=new CTile(enemy2_bmp,18,0,2,2,T_ENEMY
+tiles[n_tiles++]=new CTile(enemy2_bmp,20,0,2,1,T_ENEMY
+tiles[n_tiles++]=new CTile(enemy2_bmp,20,1,2,1,T_ENEMY
+
+ Gorilas del mundo 9:  
+gorilla_tile=n_tiles;
+tiles[n_tiles++]=new CTile(enemy2_bmp,12,2,2,2,T_ENEMY
+tiles[n_tiles++]=new CTile(enemy2_bmp,12,4,2,2,T_ENEMY
+tiles[n_tiles++]=new CTile(enemy2_bmp,14,2,2,2,T_ENEMY
+tiles[n_tiles++]=new CTile(enemy2_bmp,14,4,2,2,T_ENEMY
+tiles[n_tiles++]=new CTile(enemy2_bmp,16,2,2,2,T_ENEMY
+tiles[n_tiles++]=new CTile(enemy2_bmp,16,4,2,2,T_ENEMY
+tiles[n_tiles++]=new CTile(enemy2_bmp,18,2,2,2,T_ENEMY
+tiles[n_tiles++]=new CTile(enemy2_bmp,18,4,2,2,T_ENEMY
+
+ Lagartos del mundo 9:  
+glizard_tile=n_tiles;
+tiles[n_tiles++]=new CTile(enemy2_bmp,22,0,4,2,T_ENEMY
+tiles[n_tiles++]=new CTile(enemy2_bmp,22,2,4,2,T_ENEMY
+tiles[n_tiles++]=new CTile(enemy2_bmp,26,0,1,1,T_ENEMY
+tiles[n_tiles++]=new CTile(enemy2_bmp,26,1,1,1,T_ENEMY
+tiles[n_tiles++]=new CTile(enemy2_bmp,26,2,1,1,T_ENEMY
+tiles[n_tiles++]=new CTile(enemy2_bmp,26,3,1,1,T_ENEMY
+tiles[n_tiles++]=new CTile(enemy2_bmp,26,4,1,1,T_ENEMY
+tiles[n_tiles++]=new CTile(enemy2_bmp,26,5,1,1,T_ENEMY
+tiles[n_tiles++]=new CTile(enemy2_bmp,26,6,1,1,T_ENEMY
+tiles[n_tiles++]=new CTile(enemy2_bmp,26,7,1,1,T_ENEMY
+tiles[n_tiles++]=new CTile(enemy2_bmp,26,8,1,1,T_ENEMY
+tiles[n_tiles++]=new CTile(enemy2_bmp,26,9,1,1,T_ENEMY
+tiles[n_tiles++]=new CTile(enemy2_bmp,26,10,1,1,T_ENEMY
+tiles[n_tiles++]=new CTile(enemy2_bmp,26,11,1,1,T_ENEMY
+tiles[n_tiles++]=new CTile(enemy2_bmp,27,0,1,1,T_ENEMY
+tiles[n_tiles++]=new CTile(enemy2_bmp,27,1,1,1,T_ENEMY
+tiles[n_tiles++]=new CTile(enemy2_bmp,27,2,1,1,T_ENEMY
+tiles[n_tiles++]=new CTile(enemy2_bmp,27,3,1,1,T_ENEMY
+tiles[n_tiles++]=new CTile(enemy2_bmp,27,4,1,1,T_ENEMY
+tiles[n_tiles++]=new CTile(enemy2_bmp,27,5,1,1,T_ENEMY
+tiles[n_tiles++]=new CTile(enemy2_bmp,27,6,1,1,T_ENEMY
+tiles[n_tiles++]=new CTile(enemy2_bmp,27,7,1,1,T_ENEMY
+tiles[n_tiles++]=new CTile(enemy2_bmp,27,8,1,1,T_ENEMY
+tiles[n_tiles++]=new CTile(enemy2_bmp,27,9,1,1,T_ENEMY
+tiles[n_tiles++]=new CTile(enemy2_bmp,27,10,1,1,T_ENEMY
+tiles[n_tiles++]=new CTile(enemy2_bmp,27,11,1,1,T_ENEMY
+
+ Nubes del mundo 9:  
+lcloud_tile=n_tiles;
+tiles[n_tiles++]=new CTile(enemy2_bmp,28,0,2,2,T_ENEMY
+tiles[n_tiles++]=new CTile(enemy2_bmp,30,0,2,2,T_ENEMY
+tiles[n_tiles++]=new CTile(enemy2_bmp,28,2,2,2,T_ENEMY
+tiles[n_tiles++]=new CTile(enemy2_bmp,30,2,2,2,T_ENEMY
+tiles[n_tiles++]=new CTile(enemy2_bmp,32,0,2,2,T_ENEMY
+tiles[n_tiles++]=new CTile(enemy2_bmp,32,2,2,2,T_ENEMY
+
+tiles[n_tiles++]=new CTile(enemy2_bmp,28,4,2,2,T_ENEMY
+tiles[n_tiles++]=new CTile(enemy2_bmp,30,4,2,2,T_ENEMY
+tiles[n_tiles++]=new CTile(enemy2_bmp,32,4,2,2,T_ENEMY
+tiles[n_tiles++]=new CTile(enemy2_bmp,34,4,2,2,T_ENEMY
+tiles[n_tiles++]=new CTile(enemy2_bmp,36,4,2,2,T_ENEMY
+tiles[n_tiles++]=new CTile(enemy2_bmp,28,6,2,2,T_ENEMY
+tiles[n_tiles++]=new CTile(enemy2_bmp,30,6,2,2,T_ENEMY
+tiles[n_tiles++]=new CTile(enemy2_bmp,32,6,2,2,T_ENEMY
+tiles[n_tiles++]=new CTile(enemy2_bmp,34,6,2,2,T_ENEMY
+tiles[n_tiles++]=new CTile(enemy2_bmp,36,6,2,2,T_ENEMY
+tiles[n_tiles++]=new CTile(enemy2_bmp,28,8,2,2,T_ENEMY
+tiles[n_tiles++]=new CTile(enemy2_bmp,30,8,2,2,T_ENEMY
+tiles[n_tiles++]=new CTile(enemy2_bmp,32,8,2,2,T_ENEMY
+tiles[n_tiles++]=new CTile(enemy2_bmp,34,8,2,2,T_ENEMY
+tiles[n_tiles++]=new CTile(enemy2_bmp,36,8,2,2,T_ENEMY
+
+ Demonio del mundo 9:  
+bdemon_tile=n_tiles;
+tiles[n_tiles++]=new CTile(enemy2_bmp,18,6,4,4,T_ENEMY
+tiles[n_tiles++]=new CTile(enemy2_bmp,22,6,4,4,T_ENEMY
+tiles[n_tiles++]=new CTile(enemy2_bmp,22,10,1,1,T_ENEMY
+
+ Bolas de la pantalla de PAMPERSE:  
+pamperseball_tile=n_tiles;
+tiles[n_tiles++]=new CTile(enemy2_bmp,8,14,2,2,T_ENEMY
+
+ Puerta sin llave de los mundos:  
+wnokeydoor_tile=n_tiles;
+32,22,1,3,T_DOOR_WALL
+33,22,2,3,0
+35,22,3,3,0
+38,22,2,3,0
+
+tiles[n_tiles++]=new CTile(tiles2_bmp,32,0,1,3,T_DOOR_WALL
+tiles[n_tiles++]=new CTile(tiles2_bmp,33,0,2,3,0
+tiles[n_tiles++]=new CTile(tiles2_bmp,35,0,3,3,0
+tiles[n_tiles++]=new CTile(tiles2_bmp,38,0,2,3,0
+
+ Tiles de colisiÛn:  
+colision_tile=n_tiles;
+18,17,2,2,0
+18,19,2,2,0
+38,17,2,2,0
+38,19,2,2,0
+
+ Tiles especiales:  
+demonsign_tile=n_tiles;
+tiles[n_tiles++]=new CTile(tiles2_bmp,0,0,8,8,0
+lupa_tile=n_tiles;
+tiles[n_tiles++]=new CTile(tiles2_bmp,8,0,24,12,0
+demonsmoke_tile=n_tiles;
+tiles[n_tiles++]=new CTile(tiles2_bmp,0,8,4,4,0
+tiles[n_tiles++]=new CTile(tiles2_bmp,4,8,4,4,0
+
+demon_tile=n_tiles;
+
+if (fighting_demon>=160) {
+if (map==1) load_demon1(
+if (map==2) load_demon2(
+if (map==3) load_demon3(
+if (map==4) load_demon4(
+if (map==5) load_demon5(
+if (map==6) load_demon6(
+if (map==7) load_demon7(
+if (map==8) load_demon8(
+if (map==9) load_demon9(
+if (map==10) load_demon10(
+}  if  
+
+ Reload in the ENDING SCENE:  
+if (STATE==18 &&
+SUBSTATE>=96) {
+int i;
+
+for(i=0;i<8;i++) {
+if (tiles[demon_tile+i]!=0) delete tiles[demon_tile+i];
+}  for  
+tiles[demon_tile]=new CTile(final_bmp,0,0,20,14,T_NADA
+
+tiles[demon_tile+1]=new CTile(final_bmp,20,0,6,2,T_NADA
+tiles[demon_tile+2]=new CTile(final_bmp,20,2,6,2,T_NADA
+tiles[demon_tile+3]=new CTile(final_bmp,20,4,6,2,T_NADA
+tiles[demon_tile+4]=new CTile(final_bmp,26,2,2,2,T_NADA
+tiles[demon_tile+5]=new CTile(final_bmp,26,0,2,2,T_NADA
+tiles[demon_tile+6]=new CTile(final_bmp,28,0,2,2,T_NADA
+tiles[demon_tile+7]=new CTile(final_bmp,30,0,8,4,T_NADA
