@@ -12,11 +12,145 @@
 #import "MOG_MyScene.h"
 #import "MOG_PlayerCharacter.h"
 
+#define TILE_SIZE_X		16
+#define TILE_SIZE_Y		16
+#define GAME_VIEW_X		64
+#define GAME_VIEW_Y		64
+#define TILE_UNIT		2
+
+
+#define T_WALL			1
+#define T_WATER			2
+#define T_LADDER_WALL	4
+#define T_DOOR_WALL		8
+#define T_PLAYER		16
+#define T_WEAPON		32
+#define T_ENEMY			64
+#define T_LAVA		    128
+
+#define T_NADA		    0
+#define T_LADDER		2
+#define T_WDOOR			10
+#define T_STONE			20
+#define T_BROKEN_STONE	30
+#define T_KEYDOOR		40
+#define T_EXPLOSION		50
+#define T_DOOR			60
+#define T_ITEM		    70
+#define T_WEAPON_ARROW	80
+#define T_ARMOUR		90
+#define T_TOMB			100
+#define T_WKEYDOOR		110
+#define T_WNOKEYDOOR	120
+#define T_WEAPON_ARROW2	130
+#define T_FAIRY_BUBBLE	140
+#define T_FAIRY			150
+#define T_HITWALL		160
+#define T_WNOKEYDOOR2	170
+#define T_WEAPON_FIRE	180
+#define T_WEAPON_MINE	190
+#define T_MINE_EXP		200
+#define T_RFL_ARROW		210
+#define T_RFL_ARROW2	220
+#define T_RFL_FIRE		230
+#define T_WEAPON_RFIRE	240
+#define T_RFL_RFIRE		250
+#define T_WNOKEYDOOR3	260
+#define T_PAMPERSE		270
+
+
+#define T_WORM				1
+#define T_BAT				2
+#define T_SKELETON			3
+#define T_SMOKE				4
+#define T_SLIME				5
+#define T_BOUNCINGBALL		6
+#define T_WATERMONSTER		7
+#define T_WATERMONSTER_ARM	8
+#define T_BUBBLE			9
+#define T_JUMPINGBUSH		10
+#define T_BLUESPIDER		11
+#define T_WHITEFIREBALL		12
+#define T_FSTONE			13
+#define T_RSTONE			14
+#define T_KNIGHT			15
+#define T_BLOB				16
+#define T_BAMBU				17
+#define T_PORCUPINE			18
+#define T_PORCUPINE_BULLET	19
+#define T_BLACK				20
+#define T_WITCH				21
+#define T_WHITEBEAR			22
+#define T_WHITEBEAR_BULLET	23
+#define T_FEET				24
+#define T_REDJUMPER			25
+#define T_VENT2				26
+#define T_LIVINGWALL		27
+#define T_MEGABAT			28
+#define T_MEGABAT2			29
+#define T_MEGABAT3			30
+#define T_LAVA1				31
+#define T_LAVA2				32
+#define T_LAVA3				33
+#define T_PIRANHA			34
+#define T_PIRANHA2			35
+#define T_WHITESTAR			36
+#define T_SPIDER			37
+#define T_KNIGHTHEAD		38
+#define T_CHICKEN			39
+#define T_CHICKEN_EGG		40
+#define T_EGG_EXPLOSION		41
+#define T_ROCKMAN			42
+#define T_CLOUD				43
+#define T_BFLY_SMALL		44
+#define T_BFLY_MEDIUM		45
+#define T_BFLY_LARGE		46
+#define T_BFLY_GIANT		47
+#define T_BFLY_BULLET		48
+#define T_ARMOUR_ARROW		49
+#define T_GHOST				50
+#define T_GHOST_BULLET		51
+#define T_HEAD				52
+#define T_HEAD_BULLET		53
+#define T_WORM2				54
+#define T_OCTOPUS			55
+#define T_HAIRY				56
+#define T_HAIRYBULLET		57
+#define T_WATERDRAGON		58
+#define T_WATERBUG			59
+#define T_BIRD				60
+#define T_STONEMAN			61
+#define T_STONEMAN_BULLET	62
+#define T_PACMAN			63
+#define T_REDDRAGON			64
+#define T_REDDRAGON_BULLET	65
+#define T_OWL				66
+#define T_GREENMONKEY		67
+#define T_PLANT				68
+#define T_PLANT_BULLET		69
+#define T_TRANSFORMER		70
+#define T_TRANSF_BULLET		71
+#define T_FLAME				72
+#define T_FLAME_BULLET		73
+#define T_WITCH2			74
+#define T_CYCLOPS			75
+#define T_CYCLOPS_BULLET	76
+#define T_LCLOUD			77
+#define T_LIGHTNING			78
+#define T_LIGHTNING_FIRE	80
+#define T_SNAKE				81
+#define T_SNAKE_BULLET		82
+#define T_GLIZARD			83
+#define T_GLIZARD_TONGUE	84
+#define T_GORILLA			85
+#define T_GORILLA_ARM		86
+#define T_BDEMON			87
+#define T_BDEMON_BULLET		88
+#define T_PAMPERSE_BALL		89
+
 @interface MOG_MyScene()
 -(void)loadRoom:(int)map atLocation:(CGPoint)xy;
-@property (nonatomic, strong) NSMutableArray *tilesX;
-@property (nonatomic, strong) NSMutableArray *tilesY;
-@property (nonatomic, strong) NSMutableArray *tilesType;
+@property (nonatomic, strong) NSMutableArray *tilesKey;
 @property (nonatomic, strong) MOG_PlayerCharacter *playerCharacter;
 @property int currentRoomX;
 @property int currentRoomY;
@@ -24,9 +158,7 @@
 
 @implementation MOG_MyScene
 
-@synthesize tilesX = _tilesX;
-@synthesize tilesY = _tilesY;
-@synthesize tilesType = _tilesType;
+@synthesize tilesKey = _tilesKey;
 @synthesize count;
 @synthesize playerCharacter = _playerCharacter;
 @synthesize currentRoomX;
@@ -79,11 +211,13 @@
     self.backgroundColor = [SKColor colorWithRed:1.0 green:1.0 blue:1.0 alpha:1.0];
 
     [self loadRoom:0 atLocation:CGPointMake(self.currentRoomX, self.currentRoomY)];
-    int tileX = [[self.tilesX objectAtIndex:191] intValue];
-    int tileY = [[self.tilesY objectAtIndex:191] intValue];
+    int tileX = [[[self.tilesKey objectAtIndex:191] objectAtIndex:1] intValue];
+    int tileY = [[[self.tilesKey objectAtIndex:191] objectAtIndex:2] intValue];
+    int tileSizeX = [[[self.tilesKey objectAtIndex:191] objectAtIndex:3] intValue];
+    int tileSizeY = [[[self.tilesKey objectAtIndex:191] objectAtIndex:4] intValue];
     
     // Add player sprite
-    UIImage *playerImage = [self loadTile:CGPointMake(tileX, tileY) withSize:CGSizeMake(2, 2)];
+    UIImage *playerImage = [self loadTile:CGPointMake(tileX, tileY) withSize:CGSizeMake(tileSizeX, tileSizeY)];
     SKTexture *texture = [SKTexture textureWithImage:playerImage];
     texture.filteringMode = SKTextureFilteringNearest;
     self.playerCharacter = [[MOG_PlayerCharacter alloc] initWithTexture:texture atPosition:CGPointMake(CGRectGetMidX(self.frame),CGRectGetMidY(self.frame))];
@@ -177,7 +311,7 @@
         }
         int numberOfObjects = 0;
         [theScanner scanInt:&numberOfObjects];
-        NSMutableArray *roomObjects = [NSMutableArray arrayWithCapacity:numberOfObjects];
+
         for (int i = 0; i < numberOfObjects; i++) {
             NSString *objectInfo;
             [theScanner scanUpToCharactersFromSet:[NSCharacterSet newlineCharacterSet] intoString:&objectInfo];
@@ -215,19 +349,20 @@
 //            NSLog(@"%@", objectName);
         }
         
-        int tileSizeX = 16;
-        int tileSizeY = 16;
         int i = 0;
-        CGSize offScreenSize = CGSizeMake(tileSizeX * roomSizeX, tileSizeY * roomSizeY);
+        CGSize offScreenSize = CGSizeMake(16 * roomSizeX, 16 * roomSizeY);
         UIGraphicsBeginImageContext(offScreenSize);
         
-        for (NSNumber *tile in roomTiles) {
-            int tileXindex = [[self.tilesX objectAtIndex:tile.intValue] intValue];
-            int tileYindex = [[self.tilesY objectAtIndex:tile.intValue] intValue];
+        for (NSNumber *tileNumber in roomTiles) {
+            int tileXindex = [[[self.tilesKey objectAtIndex:tileNumber.intValue] objectAtIndex:1] intValue];
+            int tileYindex = [[[self.tilesKey objectAtIndex:tileNumber.intValue] objectAtIndex:2] intValue];
+            int tileSizeX =  [[[self.tilesKey objectAtIndex:tileNumber.intValue] objectAtIndex:3] intValue];
+            int tileSizeY =  [[[self.tilesKey objectAtIndex:tileNumber.intValue] objectAtIndex:4] intValue];
+            
             int roomX = i % roomSizeX;
             int roomY = i / roomSizeX;
-            NSString *tileType = [self.tilesType objectAtIndex:tile.intValue];
-            if ([tileType rangeOfString:@"T_WALL"].location != NSNotFound) {
+            int tileType = [[[self.tilesKey objectAtIndex:tileNumber.intValue] objectAtIndex:7] intValue];
+            if (tileType == T_WALL) {
                 SKSpriteNode *wall = [SKSpriteNode spriteNodeWithColor:[UIColor blueColor] size:CGSizeMake(self.size.width/roomSizeX, self.size.height/roomSizeY)];
                 wall.alpha = 0.1;
                 // why do i have to add one to roomY?! I don't know!
@@ -239,7 +374,7 @@
                 wall.physicsBody.collisionBitMask = 0;
                 [self addChild:wall];
             }
-            UIImage *tile = [self loadTile:CGPointMake(tileXindex, tileYindex) withSize:CGSizeMake(1, 1)];
+            UIImage *tile = [self loadTile:CGPointMake(tileXindex, tileYindex) withSize:CGSizeMake(tileSizeX, tileSizeY)];
             CGRect rect = CGRectMake(tileSizeX*roomX, tileSizeY*roomY, tileSizeX, tileSizeY);
             [tile drawInRect:rect];
             i++;
@@ -269,25 +404,17 @@
     NSArray *rows = [fileString componentsSeparatedByString:@"\n"];
     int tileCount = [rows count];
     
-    self.tilesX = [[NSMutableArray alloc] initWithCapacity:tileCount];
-    self.tilesY = [[NSMutableArray alloc] initWithCapacity:tileCount];
-    self.tilesType = [[NSMutableArray alloc] initWithCapacity:tileCount];
+    self.tilesKey = [[NSMutableArray alloc] initWithCapacity:tileCount];
     
     for (NSString *row in rows) {
         NSArray* columns = [row componentsSeparatedByString:@","];
-        int x = [[columns objectAtIndex:0] intValue];
-        int y = [[columns objectAtIndex:1] intValue];
-        NSString *text = [columns objectAtIndex:4];
-        
-        [self.tilesX addObject:[NSNumber numberWithInt:x]];
-        [self.tilesY addObject:[NSNumber numberWithInt:y]];
-        [self.tilesType addObject:text];
+        [self.tilesKey addObject:columns];
     }
 }
 
 -(UIImage *)loadTile:(CGPoint)location withSize:(CGSize)size{
-    int tile_size_x = 16;
-    int tile_size_y = 16;
+    int tile_size_x = 1;
+    int tile_size_y = 1;
     
     UIImage *tiles = [UIImage imageNamed:@"tiles.png"];
     
