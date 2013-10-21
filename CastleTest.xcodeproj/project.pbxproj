@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		866F09FB1810E5E300839002 /* tilenamekey.txt in Resources */ = {isa = PBXBuildFile; fileRef = 866F09FA1810E5E300839002 /* tilenamekey.txt */; };
+		866F09FE18134BA800839002 /* MOG_Sprite.m in Sources */ = {isa = PBXBuildFile; fileRef = 866F09FD18134BA800839002 /* MOG_Sprite.m */; };
 		86910315180B3B3E00EE6F40 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 86910314180B3B3E00EE6F40 /* Foundation.framework */; };
 		86910317180B3B3E00EE6F40 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 86910316180B3B3E00EE6F40 /* CoreGraphics.framework */; };
 		86910319180B3B3E00EE6F40 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 86910318180B3B3E00EE6F40 /* UIKit.framework */; };
@@ -359,6 +360,8 @@
 
 /* Begin PBXFileReference section */
 		866F09FA1810E5E300839002 /* tilenamekey.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = tilenamekey.txt; path = Assets/rooms/tilenamekey.txt; sourceTree = "<group>"; };
+		866F09FC18134BA800839002 /* MOG_Sprite.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MOG_Sprite.h; sourceTree = "<group>"; };
+		866F09FD18134BA800839002 /* MOG_Sprite.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MOG_Sprite.m; sourceTree = "<group>"; };
 		86910311180B3B3E00EE6F40 /* CastleTest.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CastleTest.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		86910314180B3B3E00EE6F40 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		86910316180B3B3E00EE6F40 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -774,6 +777,8 @@
 				8691032F180B3B3E00EE6F40 /* MOG_ViewController.m */,
 				86910331180B3B3E00EE6F40 /* MOG_MyScene.h */,
 				86910332180B3B3E00EE6F40 /* MOG_MyScene.m */,
+				866F09FC18134BA800839002 /* MOG_Sprite.h */,
+				866F09FD18134BA800839002 /* MOG_Sprite.m */,
 				869105DF180DEF8F00EE6F40 /* MOG_Tile.h */,
 				869105E0180DEF8F00EE6F40 /* MOG_Tile.m */,
 				869105DC180DEEA200EE6F40 /* MOG_PlayerCharacter.h */,
@@ -1577,6 +1582,7 @@
 				86910327180B3B3E00EE6F40 /* MOG_AppDelegate.m in Sources */,
 				86910333180B3B3E00EE6F40 /* MOG_MyScene.m in Sources */,
 				869105E1180DEF8F00EE6F40 /* MOG_Tile.m in Sources */,
+				866F09FE18134BA800839002 /* MOG_Sprite.m in Sources */,
 				869105DE180DEEA200EE6F40 /* MOG_PlayerCharacter.m in Sources */,
 				86910323180B3B3E00EE6F40 /* main.m in Sources */,
 			);

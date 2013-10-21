@@ -150,7 +150,8 @@
 
 @interface MOG_MyScene()
 -(void)loadRoom:(int)map atLocation:(CGPoint)xy;
-@property (nonatomic, strong) NSMutableArray *tilesKey;
+@property (nonatomic, strong) NSArray *tilesKey;
+@property (nonatomic, strong) NSDictionary *tileNames;
 @property (nonatomic, strong) MOG_PlayerCharacter *playerCharacter;
 @property int currentRoomX;
 @property int currentRoomY;
@@ -170,6 +171,7 @@
 
         self.count = 0;
         [self getTileKeys];
+        [self getTileNames];
 
         self.currentRoomX = 0;
         self.currentRoomY = 4;
@@ -317,15 +319,32 @@
             [theScanner scanUpToCharactersFromSet:[NSCharacterSet newlineCharacterSet] intoString:&objectInfo];
             NSLog(@"%@", objectInfo);
             NSArray *components = [objectInfo componentsSeparatedByString:@" "];
+            NSString *tileName = [NSString stringWithFormat:@"%@_tile", [[components objectAtIndex:0] lowercaseString]];
+            
             int objectX;
             int objectY;
-            if ([[components objectAtIndex:0] isEqualToString:@"ENEMY"]) {
+            if ([[components objectAtIndex:0] isEqualToString:@"enemy"]) {
                 NSString *enemyType = [components objectAtIndex:1];
                 objectX = [[components objectAtIndex:2] integerValue];
                 objectY = [[components objectAtIndex:3] integerValue];
             } else {
-                objectX = [[components objectAtIndex:1] integerValue];
-                objectY = [[components objectAtIndex:2] integerValue];
+                CGPoint objectPosition = CGPointMake([[components objectAtIndex:1] integerValue],[[components objectAtIndex:2] integerValue]);
+                
+                int tileNumber = [[self.tileNames objectForKey:tileName] integerValue];
+                
+                int tileXindex = [[[self.tilesKey objectAtIndex:tileNumber] objectAtIndex:1] intValue];
+                int tileYindex = [[[self.tilesKey objectAtIndex:tileNumber] objectAtIndex:2] intValue];
+                int tileSizeX =  [[[self.tilesKey objectAtIndex:tileNumber] objectAtIndex:3] intValue];
+                int tileSizeY =  [[[self.tilesKey objectAtIndex:tileNumber] objectAtIndex:4] intValue];
+                
+                UIImage *tile = [self loadTile:CGPointMake(tileXindex, tileYindex) withSize:CGSizeMake(tileSizeX, tileSizeY)];
+                SKTexture *texture = [SKTexture textureWithImage:tile];
+                texture.filteringMode = SKTextureFilteringNearest;
+                SKSpriteNode *sprite = [SKSpriteNode spriteNodeWithTexture:texture size:texture.size];
+                sprite.position = CGPointMake(objectPosition.x * 16, self.frame.size.height - (objectPosition.y+1) * 16);
+                sprite.anchorPoint = CGPointZero;
+                
+                [self addChild:sprite];
             }
             
 //            [theScanner scanCharactersFromSet:[NSCharacterSet letterCharacterSet] intoString:&objectName];
@@ -367,6 +386,7 @@
                 wall.alpha = 0.1;
                 // why do i have to add one to roomY?! I don't know!
                 wall.position = CGPointMake(roomX * wall.size.width, self.frame.size.height - (roomY+1) * wall.size.height);
+                
                 wall.anchorPoint = CGPointZero;
                 wall.physicsBody = [SKPhysicsBody bodyWithRectangleOfSize:CGSizeMake(tileSizeX, tileSizeY)];
                 wall.physicsBody.dynamic = NO;
@@ -404,12 +424,35 @@
     NSArray *rows = [fileString componentsSeparatedByString:@"\n"];
     int tileCount = [rows count];
     
-    self.tilesKey = [[NSMutableArray alloc] initWithCapacity:tileCount];
+    NSMutableArray *TemptilesKey = [[NSMutableArray alloc] initWithCapacity:tileCount];
     
     for (NSString *row in rows) {
         NSArray* columns = [row componentsSeparatedByString:@","];
-        [self.tilesKey addObject:columns];
+        [TemptilesKey addObject:columns];
     }
+    self.tilesKey = [NSArray arrayWithArray:TemptilesKey];
+}
+
+-(void)getTileNames{
+    NSBundle *myBundle = [NSBundle mainBundle];
+    NSString *filename = [myBundle pathForResource:@"tilenamekey" ofType:@"txt"];
+    
+    NSData *data = [NSData dataWithContentsOfFile:filename];
+    NSString *fileString = [[NSString alloc] initWithData:data encoding:NSASCIIStringEncoding];
+    
+    NSArray *rows = [fileString componentsSeparatedByString:@"\n"];
+    int tileCount = [rows count];
+
+    NSMutableArray *keys = [[NSMutableArray alloc] initWithCapacity:tileCount];
+    NSMutableArray *objs = [[NSMutableArray alloc] initWithCapacity:tileCount];
+    
+    for (NSString *row in rows) {
+        NSArray* columns = [row componentsSeparatedByString:@","];
+        int numberOfValues = [columns count];
+        [keys addObject:[columns objectAtIndex:0]];
+        [objs addObject:[NSNumber numberWithInt:[[columns objectAtIndex:1] integerValue]]];
+    }
+    self.tileNames = [[NSDictionary alloc] initWithObjects:objs forKeys:keys];
 }
 
 -(UIImage *)loadTile:(CGPoint)location withSize:(CGSize)size{
